@@ -1,0 +1,315 @@
+body {
+    background-color: #edf6fb;
+    color: #000;
+    font-size: 18px;
+}
+
+.container {
+    position: relative;
+}
+
+/* 右上角中英切换 */
+
+nav {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+
+nav span {
+    margin: 5px;
+}
+
+nav .about {
+    margin-right: 10px;
+}
+
+.aboutu {
+    position: absolute;
+    right: 25px;
+    top: 45px;
+    display: inline-block;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+nav .about:hover {
+    font-weight: 800;
+}
+
+/* 版心 */
+main {
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* 标题 */
+
+main header {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/* 新增框 */
+
+main .add-content-wrapper {
+    margin: 10px auto;
+    width: 690px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, .8);
+    transition: all 0.5s;
+}
+
+main .add-content-wrapper:hover {
+    box-shadow: 0 0;
+}
+
+main .add-content-wrapper input {
+    width: 600px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    font-size: 18px;
+}
+
+main .add-content-wrapper button {
+    width: 90px;
+    height: 60px;
+    background-color: #f8d8e8;
+    border-radius: 0 10px 10px 0;
+    border-left: 0;
+    font-size: 18px;
+}
+
+/* 列表主体 */
+
+main .content {
+    width: 690px;
+    height: 430px;
+    margin: 25px auto;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, .8);
+    background-color: #fff;
+    overflow: auto;
+    transition: all 0.5s;
+}
+
+/* 顶部标语 */
+
+main .content .tip {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.5s;
+    background-color: #9cd2cb;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+main .content .tip:hover {
+    background-color: #c6e5f5;
+}
+
+/* 列表内容 */
+
+main .content div .list li {
+    position: relative;
+    flex-flow: row nowrap;
+    margin: 20px auto;
+    width: 600px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, .8);
+    background-color: #f8f3e6;
+    transition: all 0.5s;
+}
+
+main .content div .list li:hover {
+    box-shadow: 0 0;
+}
+
+main .content div .list li span {
+    display: inline-block;
+    width: 500px;
+    min-height: 65px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 18px 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* 编辑样式 */
+main .content div .list .edit-mode {
+    background-color: #ffd;
+}
+
+main .content div .list li span[contenteditable="true"] {
+    outline: none
+}
+
+/* 已完成样式 */
+
+main .content div .list-finished li,
+main .content div .list-recycle .li-finished {
+    background-color: #d7f3f0;
+}
+
+main .content div .list-finished li span,
+main .content div .list-recycle .li-finished span {
+    color: #7f8c89;
+    text-decoration: line-through;
+}
+
+
+/* 左右操作按钮 */
+
+main .content div .list li button {
+    position: absolute;
+    top: 18px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 22px;
+    transition: all 0.3s;
+}
+
+main .content div .list li .complete,
+main .content div .list li .completed {
+    left: 10px;
+    border-radius: 15px;
+}
+
+main .content div .list li .completed {
+    background-color: #9cd2cb;
+    line-height: 10px;
+}
+
+main .content div .list li .complete:hover,
+main .content div .list li .completed:hover {
+    background-color: #9cd2cb;
+    box-shadow: -3px 3px;
+    transform: translate(3px, -3px);
+}
+
+main .content div .list li .delete,
+main .content div .list li .return {
+    right: 10px;
+    border-radius: 12px;
+    line-height: 12px;
+}
+
+main .content div .list li .complete,
+main .content div .list li .completed,
+main .content div .list li .delete {
+    font-weight: 600;
+}
+
+main .content div .list li .delete:hover,
+main .content div .list li .return:hover {
+    background-color: #ebaba1;
+    box-shadow: 3px 3px;
+    transform: translate(-3px, -3px);
+}
+
+/* 快捷操作栏 */
+
+aside {
+    position: absolute;
+    top: 11.8rem;
+    left: 75%;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, .8);
+    background-color: #fff;
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+aside:hover {
+    box-shadow: 0 0;
+}
+
+/* 关闭状态 */
+
+aside .switch-off {
+    width: 45px;
+    height: 40px;
+    border-radius: 10px 10px 0 0;
+    background-color: #ebaba1;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+aside span {
+    display: block;
+    height: 80px;
+    width: 45px;
+    padding: 10px 4px 0 13px;
+    border: 2px solid #000;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    line-height: 15px;
+}
+
+/* 开启状态 */
+
+aside .switch-on {
+    width: 140px;
+    height: 45px;
+    border-radius: 10px 10px 0 0;
+    background-color: #9cd2cb;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+aside li {
+    display: block;
+    height: 37px;
+    width: 140px;
+    border: 2px solid #000;
+    border-top: 0;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    line-height: 37px;
+    transition: all 0.3s;
+}
+
+aside ul .import {
+    border-radius: 0 0 10px 10px;
+}
+
+aside ul .all:hover {
+    background-color: #f8d8e8;
+}
+
+aside ul .being:hover,
+aside ul .export:hover,
+aside ul .import:hover {
+    background-color: #f0daa5;
+}
+
+aside ul .finished:hover,
+aside ul .all-finish:hover {
+    background-color: #9cd2cb;
+}
+
+aside ul .recycle:hover,
+aside ul .clear-finished:hover,
+aside ul .clear-all:hover {
+    background-color: #ebaba1;
+}

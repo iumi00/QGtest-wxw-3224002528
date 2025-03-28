@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="Zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="JS/page-switcher.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <span class="about">关于你</span>
+            <a href="#">En</a>
+            <span>/</span>
+            <a href="#">中</a>
+
+        </nav>
+        <div class="aboutu">
+            <p>你当然是最厉害的小孩呀😊</p>
+        </div>
+        <script>
+            const about = document.querySelector('.about');
+            const aboutu = document.querySelector('.aboutu');
+            let isVisible = false;
+            about.addEventListener('click', function () {
+                isVisible = !isVisible;
+                aboutu.style.opacity = isVisible ? '1' : '0';
+            });
+        </script>
+        <main>
+            <header>To Do List</header>
+            <div class="add-content-wrapper">
+                <input type="text" placeholder="新增待办事项..."><button type="button" class="submit">提交</button>
+            </div>
+            <div class="content">
+                <span class="tip">有志者事竟成！</span>
+                <div class="content-box">
+                    <ul class="list list-being list-out">
+                        <!-- <li>
+                            <button class="complete"></button>
+                            <span>进行中</span>
+                            <button class="delete">✕</button>
+                        </li> -->
+                    </ul>
+                    <ul class="list list-finished list-out">
+                        <!-- <li>
+                            <button class="completed">✓</button>
+                            <span>已完成</span>
+                            <button class="delete">✕</button>
+                        </li> -->
+                    </ul>
+                    <ul class="list list-recycle hide">
+                        <!-- <li>
+                            <button class="complete"></button>
+                            <span>回收站</span>
+                            <button class="return">↩</button>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <aside>
+            <div class="operation-off">
+                <button class="switch-off">关</button>
+                <span>快捷操作</span>
+            </div>
+            <div class="operation-on hide">
+                <button class="switch-on">开✨</button>
+                <ul>
+                    <li class="all">全部</li>
+                    <li class="being">进行中</li>
+                    <li class="finished">已完成</li>
+                    <li class="recycle">回收站</li>
+                    <li class="all-finish">全部标为已完成</li>
+                    <li class="clear-finished">清除已完成</li>
+                    <li class="clear-all">清除全部</li>
+                    <li class="export">导出数据</li>
+                    <li class="import">导入（txt/json）</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>
