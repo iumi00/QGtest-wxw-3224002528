@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1111445",
+      "name": "房子222",
+      "font_class": "fangzi222",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "7836835",
+      "name": "个人信息",
+      "font_class": "gerenxinxi",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "22247934",
+      "name": "工作台",
+      "font_class": "gongzuotai",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    }
+  ]
+}

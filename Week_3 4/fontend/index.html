@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="Zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Hub</title>
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="font/font_dfb88istf8/iconfont.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/pages-switch.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="title">
+            <h1>Model Hub</h1>
+        </div>
+        <ul class="navi">
+            <li class="homepage  show"><span class="iconfont icon-fangzi222"></span>主页</li>
+            <li class="workbench"><span class="iconfont icon-gongzuotai"></span>工作台</li>
+            <li class="personal-info"><span class="iconfont icon-gerenxinxi"></span>个人信息</li>
+        </ul>
+    </nav>
+    <div class="container-right">
+        <header>
+            <div class="search">
+                <input type="search"><span>🔍</span>
+            </div>
+            <div class="person">
+                <div class="head-picture">QG</div>
+                <span>QGer</span>
+            </div>
+        </header>
+        <main>
+            <div class="homepage-section">
+                <p>欢迎来到Model Hub！</p>
+            </div>
+            <div class="workbench-section hide">
+                <div class="container-items">
+                    <div class="items-buttons">
+                        <button class="newitem-btn">+ 新建项目</button>
+                        <button>查看结果</button>
+                    </div>
+                    <ul>
+                        <li>这是一个例子</li>
+                    </ul>
+                </div>
+                <div class="container-models">
+                    <div class="modelhead">
+                        <h3>模型库</h3>
+                        <span>🗑️</span>
+                    </div>
+                    <div class="modelhub-buttons">
+                        <button class="add-hierarchy">增加层级</button>
+                        <button class="upload">+ 上传</button>
+                    </div>
+                    <ul class="models-list">
+                        <li data-url="https://chat.openai.com/" class="openai" draggable="true"
+                            title="由0penAI开发，以强大的自然语言处理能力著称，支持多任务处理。" id="openai">openai
+                        </li>
+                        <li data-url="https://chat.deepseek.com/" class="deepseek" draggable="true"
+                            title="深度求索公司推出的开源大模型，专注高效推理与长文本处理。" id="deepseek">deepseek
+                        </li>
+                        <li data-url="https://yuanbao.tencent.com/" class="yuanbao" draggable="true"
+                            title="腾讯推出的企业级大模型，强调安全与落地应用，支持多态交互。" id="yuanbao">腾讯元宝
+                        </li>
+                    </ul>
+                </div>
+                <div class="hierarchies">
+                    <ul>
+                        <h5>层级：1</h5>
+                    </ul>
+                </div>
+                <div class="model-upload hide">
+                    <form action="">
+                        <div class="model-name"><label>模型名称：</label><input type="text"></div>
+                        <div class="model-url"><label>模型url： </label>&nbsp;&nbsp;<input type="text"></div>
+                        <div class="model-tip"><label>模型简介：</label><textarea name="" id=""></textarea></div>
+                        <div class="upload-btn">
+                            <button class="upload-btn-cancel" type="button">取消</button>
+                            <button class="upload-btn-sure">确认</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="model-info hide">
+                    <form action="">
+                        <div class="model-weight"><label>模型权重：</label><input type="number" step="0.1" min="0" max="1"
+                                required placeholder="0~1"></div>
+                        <div class="model-tipword"><label>模型提示词： </label><input type="text"></div>
+                        <div class="info-btn">
+                            <button class="info-btn-cancel" type="button">取消</button>
+                            <button class="info-btn-sure" type="button">确认</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="newitem hide">
+                    <form action="">
+                        <div class="item-name"><label>项目名称： </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text">
+                        </div>
+                        <div class="item-text"><label>请输入文本：</label><textarea name="" id=""></textarea></div>
+                        <div class="item-image">
+                            <span>上传图片：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;+</p>Upload
+                            </label><input type="file" class="hide">
+                            <ul class="imgs"></ul>
+                        </div>
+                        <div class="newitem-btn">
+                            <button class="item-btn-cancel" type="button">取消</button>
+                            <button class="item-btn-sure" type="button">确认</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="personal-info-section hide">
+                <p>神秘人没有留下任何信息......</p>
+            </div>
+        </main>
+    </div>
+    <!-- <div class="float">
+        <i class="openai-tip none">由0penAI开发，以强大的自然语言处理能力著称，支持多任务处理。</i>
+        <i class="deepseek-tip none">深度求索公司推出的开源大模型，专注高效推理与长文本处理。</i>
+        <i class="yuanbao-tip none">腾讯推出的企业级大模型，强调安全与落地应用，支持多态交互。</i>
+    </div> -->
+</body>
+
+</html>

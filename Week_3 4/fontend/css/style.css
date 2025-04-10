@@ -1,0 +1,437 @@
+body {
+    display: flex;
+    /* 解决下拉nav不够长的问题 */
+    position: relative;
+    background-color: #313e4e;
+    min-height: 100vh;
+}
+
+/* 侧边栏 */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 15vw;
+    min-width: 160px;
+    background-color: #313e4e;
+}
+
+nav .title {
+    display: flex;
+    width: 100%;
+    height: 13vh;
+    min-width: 100px;
+    min-height: 100px;
+    align-items: center;
+    padding: 5px;
+    padding-left: 0;
+}
+
+nav .title h1 {
+    width: 100%;
+    color: #65b787;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+nav .navi {
+    width: 100%;
+}
+
+nav .navi li {
+    position: relative;
+    height: 8vh;
+    min-height: 50px;
+    padding-left: calc(25px + 3vw);
+    margin: 0 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 8vh;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: background-color 0.8s;
+}
+
+nav .navi li:hover {
+    background-color: #39485c;
+}
+
+.show {
+    background-color: #39485c;
+}
+
+/* 右边区域 */
+.container-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部 */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 8%;
+    min-height: 50px;
+    background-color: #313e4e;
+}
+
+header .search {
+    display: flex;
+}
+
+header .search input {
+    width: 200px;
+    height: 28px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+header .search span {
+    display: inline-block;
+    width: 20px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 0 5px 5px 0;
+    line-height: 30px;
+}
+
+header .person {
+    display: flex;
+    margin: 0 4vw 0 5vw;
+    align-items: center;
+}
+
+header .person .head-picture {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #65b787;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+}
+
+header .person span {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* 主内容区 */
+main {
+    position: relative;
+    flex: 1;
+    background-color: #f5f5f5;
+}
+
+/* 主页 */
+
+.homepage-section p {
+    padding: 30vh 10vw;
+    font-size: 5rem;
+    text-align: center;
+}
+
+/* 工作台 */
+
+.workbench-section {
+    display: flex;
+}
+
+/* 项目区 */
+main .container-items {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+main button {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 2px solid #FFD93D;
+    font-size: 1rem;
+}
+
+main .container-items .items-buttons {
+    display: flex;
+    width: 200px;
+}
+
+main .container-items button:first-child {
+    background-color: #fff;
+    margin-right: 5px;
+}
+
+main .container-items button:nth-child(2) {
+    background-color: #FFD93D;
+    color: #000;
+}
+
+main .container-items ul {
+    flex: 1;
+}
+
+main .container-items li {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #65b787;
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* 模型区 */
+main .container-models {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    overflow-x: visible;
+}
+
+main .container-models .modelhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8%;
+    width: 200px;
+    padding: 15px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+main .container-models .modelhead span {
+    background-color: #fff;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+main .container-items .modelhub-buttons {
+    display: flex;
+}
+
+main .container-models .modelhub-buttons button {
+    background-color: #FFD93D;
+    color: #000;
+    margin: 5px 7px;
+}
+
+main .container-models ul {
+    flex: 1;
+}
+
+main .container-models ul li {
+    height: 45px;
+    width: 180px;
+    background-color: #65b787;
+    margin: 15px 0;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 45px;
+    color: #fff;
+    text-overflow: ellipsis;
+}
+
+/* 模型提示词 */
+/* .float i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000;
+    background-color: #fff;
+} */
+
+/* 上传模型 */
+main .workbench-section .model-upload,
+main .workbench-section .model-info,
+main .workbench-section .newitem {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    border-radius: 10px;
+    background-color: #d7f1db;
+    box-shadow: -10px 10px 5px #3f694e;
+    padding: 30px;
+    color: #000;
+}
+
+main .workbench-section .model-upload div,
+main .workbench-section .model-info div,
+main .workbench-section .newitem div {
+    margin: 10px 25px;
+}
+
+main .workbench-section .model-upload div input,
+main .workbench-section .model-upload div textarea,
+main .workbench-section .model-info input,
+main .workbench-section .newitem input,
+main .workbench-section .newitem textarea {
+    height: 2rem;
+    width: 20rem;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+main .workbench-section .model-upload div textarea,
+main .workbench-section .newitem textarea {
+    height: 10rem;
+}
+
+main .workbench-section .model-upload label,
+main .workbench-section .model-info label,
+main .workbench-section .newitem label,
+main .workbench-section .newitem span {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+main .workbench-section .model-upload .upload-btn,
+main .workbench-section .model-info .info-btn,
+main .workbench-section .newitem .newitem-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+main .workbench-section .model-upload .upload-btn button,
+main .workbench-section .model-info .info-btn button,
+main .workbench-section .newitem .newitem-btn button {
+    background-color: #fff;
+    border-color: #3f694e;
+}
+
+/* 层级模型权重提示词框 */
+main .workbench-section .model-info {
+    top: 30%;
+}
+
+main .workbench-section .model-info .model-weight input {
+    width: 4rem;
+}
+
+/* 上传项目 */
+main .workbench-section .newitem {
+    top: 10%;
+    left: 25%;
+}
+
+main .workbench-section .newitem .item-image {
+    overflow: auto;
+    height: 150px;
+    width: 500px;
+}
+
+main .workbench-section .newitem .item-image label {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #000;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #fff;
+    line-height: 40px;
+}
+
+/* 缩略图 label后面应该可以紧跟一个图片 */
+main .workbench-section .newitem .item-image ul li {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+}
+
+main .workbench-section .newitem .item-image ul li,
+main .workbench-section .newitem .item-image ul li img {
+    width: 150px;
+    height: 150px;
+}
+
+main .workbench-section .newitem .item-image ul li i {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* 层级操作区 */
+main .hierarchies {
+    display: flex;
+    flex-wrap: wrap;
+    height: 92vh;
+    flex: 1;
+    overflow: auto;
+}
+
+main .hierarchies ul {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+main .hierarchies h5 {
+    width: 300px;
+    color: #000;
+    font-size: 1.5rem;
+}
+
+main .hierarchies li {
+    height: 45px;
+    width: 100%;
+    background-color: #65b787;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 45px;
+    color: #fff;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
+/* 模型权重 */
+.hierarchies li .weight-display {
+    float: right;
+    color: #666;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+/* 个人信息区 */
+main .personal-info-section {
+    padding: 30vh 10vw;
+    font-size: 4rem;
+    text-align: center;
+}
