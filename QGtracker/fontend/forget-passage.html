@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QG项目跟踪系统 - 忘记密码</title>
+    <link rel="icon" href="static/ico/favicon.ico">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/lr-common.css">
+    <link rel="stylesheet" href="CSS/forgot-password.css">
+    <script src="JS/forgot-password.js"></script>
+</head>
+
+<body>
+    <div class="forgot-container">
+        <div class="forgot-header">
+            <h1>🔑 找回密码</h1>
+        </div>
+
+        <form id="verifyForm" method="post">
+            <div class="input-group">
+                <input type="text" placeholder="用户名" required id="username">
+                <input type="email" placeholder="邮箱" required id="email">
+                <div class="error-message" id="errorMsg"></div>
+            </div>
+            <button type="submit" class="send-btn">验证账户</button>
+        </form>
+
+        <form id="resetForm" style="display: none;">
+            <div class="input-group">
+                <input type="password" placeholder="新密码" required id="newPassword">
+                <input type="password" placeholder="确认新密码" required id="confirmPassword">
+                <div class="error-message" id="passError"></div>
+            </div>
+            <button type="submit" class="reset-btn">重置密码</button>
+        </form>
+        <div class="back-login">
+            <a href="login.html">← 返回登录</a>
+        </div>
+    </div>
+</body>
+
+</html>

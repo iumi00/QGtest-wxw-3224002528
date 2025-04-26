@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QG项目跟踪系统 - 登录</title>
+    <link rel="icon" href="static/ico/favicon.ico">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/lr-common.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    <script src="JS/login.js"></script>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🔐 QG Tracker</h1>
+            <p>项目进度跟踪与管理平台</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" placeholder="用户名/邮箱" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="密码" required>
+            </div>
+
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">记住密码</label>
+                </div>
+                <a href="forget-passage.html" class="forgot-password">忘记密码？</a>
+            </div>
+
+            <button type="submit" class="login-btn">立即登录</button>
+        </form>
+
+        <div class="register-link">
+            新用户？<a href="register.html">注册账号</a>
+        </div>
+    </div>
+</body>
+
+</html>

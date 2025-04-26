@@ -1,0 +1,362 @@
+/* 任务主内容区 */
+main .tasks,
+main .messages .message-list {
+    margin: 2vw;
+}
+
+/* 列表元素 */
+main .tasks .task-list ul li {
+    width: max(30%, 250px);
+}
+
+main .tasks .task-list ul li p {
+    margin: 0.2rem 0;
+}
+
+main .tasks .task-list ul li .task-item {
+    font-size: 0.8rem;
+}
+
+/* 状态部分 */
+main .tasks .task-list ul li .status-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .tasks .task-list ul li .task-status {
+    padding: 0;
+}
+
+main .tasks .task-list ul li .status-box button {
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 0;
+    margin-top: 0.2rem;
+    background-color: var(--accent-blue);
+    color: var(--light-gray);
+    font-size: 0.8rem;
+    transition: all 0.8s;
+}
+
+main .tasks .task-list ul li .status-box button:hover {
+    transform: translateY(-3px);
+}
+
+/* 评论区 */
+main .tasks .task-list ul li .comment {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+main .tasks .task-list ul li .comment .comment-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .tasks .task-list ul li .comment ul {
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+main .tasks .task-list ul li .comment ul li {
+    width: 100%;
+    height: 2rem;
+    border: 0;
+    box-shadow: 0;
+    padding: 0.2rem;
+    background-color: #bfddf2;
+}
+
+/* 更新状态弹窗 */
+
+/* 外部阴影设置 */
+main .tasks .update-status,
+main .projects .project-detail,
+main .projects .project-add {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 弹窗卡片 */
+main .tasks .update-status .update-card,
+main .projects .project-detail .project-detail-card {
+    background: var(--light-gray);
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+main .tasks .update-status .update-card {
+    padding: 2rem;
+}
+
+/* 状态单选框 */
+main .tasks .update-status .update-card .status-chose,
+main .tasks .update-status .update-card .status-description {
+    display: flex;
+}
+
+main .tasks .update-status .update-card .status-chose p {
+    font-size: 1.2rem;
+}
+
+main .tasks .update-status .update-card .status-chose select {
+    height: 1.8rem;
+    width: 4rem;
+}
+
+/* 更新描述 */
+main .tasks .update-status .update-card .status-description {
+    margin: 0.5rem 0;
+}
+
+main .tasks .update-status .update-card .status-description textarea {
+    flex: 1;
+    padding: 0.5rem;
+    height: 5rem;
+}
+
+/* 附加文件 */
+main .tasks .update-status .update-card .upload-section {
+    margin: 1rem 0;
+}
+
+main .tasks .update-status .update-card h5 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+main .tasks .update-status .update-card .upload-area {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+main .tasks .update-status .update-card .upload-area .upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    border: 2px dashed var(--accent-blue);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+main .tasks .update-status .update-card .upload-area .upload-box:hover {
+    background: var(--light-gray);
+    border-style: solid;
+}
+
+main .tasks .update-status .update-card .upload-area .upload-box .upload-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+main .tasks .update-status .update-card .upload-area .upload-box .hint {
+    color: var(--defaulttext-gray);
+    font-size: 0.9rem;
+}
+
+/* 按钮部分 */
+main .tasks .update-status .update-card .update-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .tasks .update-status .update-card .update-btn button {
+    width: 4rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: var(--accent-blue);
+    color: var(--light-gray);
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+main .tasks .update-status .update-card .update-btn button:hover {
+    transform: translateY(-3px);
+}
+
+/* 操作弹窗 */
+main .tasks .approval-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    /* 确保比其他元素高 */
+}
+
+main .tasks .approval-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+main .tasks .approval-modal-content {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 600px;
+    max-width: 90vw;
+}
+
+main .tasks .approval-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+main .tasks .approval-attachments a {
+    display: block;
+    color: var(--accent-blue);
+    text-decoration: none;
+    margin: 0.3rem 0;
+}
+
+main .tasks .button-group {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* 统一模态框样式 */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-card {
+    position: relative;
+    background: var(--light-gray);
+    width: 560px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--default-gray);
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.modal-close {
+    background: none;
+    border: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--defaulttext-gray);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--default-gray);
+    text-align: right;
+}
+
+/* 错误信息特殊样式 */
+.error-modal .modal-title {
+    color: var(--error-red);
+}
+
+.error-modal .modal-body {
+    color: var(--text-dark);
+}
+
+/* 审批信息细节样式 */
+.approval-info p {
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+}
+
+.approval-info strong {
+    color: var(--text-dark);
+    min-width: 80px;
+    display: inline-block;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: var(--default-gray);
+    border-radius: 4px;
+}
+
+.file-icon {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.action-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    border: 1px solid var(--accent-blue);
+    background: var(--light-gray);
+    color: var(--accent-blue);
+    transition: all 0.3s;
+}
+
+.approve-btn:hover {
+    background: var(--finished-green);
+    border-color: var(--finishedtext-green);
+}
+
+.reject-btn:hover {
+    background: var(--error-red);
+    color: white;
+}

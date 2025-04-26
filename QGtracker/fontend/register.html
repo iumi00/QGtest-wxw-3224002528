@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QG项目跟踪系统 - 注册</title>
+    <link rel="icon" href="static/ico/favicon.ico">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/lr-common.css">
+    <link rel="stylesheet" href="CSS/register.css">
+    <script src="JS/register.js"></script>
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <h1>🚀 开启旅程</h1>
+            <p>创建您的项目管理账户</p>
+        </div>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" placeholder="用户名" required id="username">
+            </div>
+
+            <div class="input-group">
+                <input type="email" placeholder="电子邮箱" required id="email">
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="密码" required id="password">
+                <div class="password-strength">
+                    <div class="strength-bar"></div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="确认密码" required id="confirmPassword">
+                <div class="error-message" id="passwordError">两次输入密码不一致</div>
+            </div>
+
+            <button type="submit" class="register-btn">注册账号</button>
+        </form>
+
+        <div class="login-link">
+            已有账户？<a href="login.html">立即登录</a>
+        </div>
+    </div>
+</body>
+
+</html>

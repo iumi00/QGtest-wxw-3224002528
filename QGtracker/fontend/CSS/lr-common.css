@@ -1,0 +1,181 @@
+/* 根元素伪类选择器，指向<html>,设置自定义属性 */
+:root {
+    /* 底色主蓝色 */
+    --primary-blue: #2C3E50;
+    /* 强调蓝色 */
+    --accent-blue: #3498DB;
+    /* 浅色文本色 */
+    --light-gray: #F5F6FA;
+    /* 深色文本色 */
+    --text-dark: #2C3E50;
+    /* 警告红色 */
+    --error-red: #e74c3c;
+}
+
+body {
+    min-height: 100vh;
+    /* 线性渐变函数linear-gradient（渐变方向，渐变起点色，渐变终点色）设置背景色 */
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    display: flex;
+    /* 主轴居中对齐 */
+    justify-content: center;
+    /* 交叉轴居中对齐 */
+    align-items: center;
+}
+
+/* 卡片容器 */
+.login-container,
+.register-container,
+.forgot-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    /* 背景模糊滤镜 */
+    backdrop-filter: blur(10px);
+    /* @keyframes动画效果属性 */
+    animation: slideUp 0.6s ease;
+    transition: all 0.8s ease;
+}
+
+.login-container:hover,
+.register-container:hover,
+.forgot-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* 标题区域 */
+.login-header,
+.register-header,
+.forgot-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h1,
+.register-header h1 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.login-header p,
+.register-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 输入框样式 */
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* 输入框聚焦样式 */
+.input-group input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* 登录、注册按钮 */
+.login-btn,
+.register-btn,
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover,
+.register-btn:hover,
+.reset-btn:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* 登陆注册跳转链接 */
+.register-link,
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.register-link a,
+.login-link a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+/* 动画 */
+/* @keyframes：用于创建动画序列的规则，可定义动画在不同时间点的状态，实现平滑的动画过渡 */
+@keyframes slideUp {
+
+    /* 起始关键帧，动画开始状态，即0% */
+    from {
+        opacity: 0;
+        /* 元素在垂直方向上向下移动20px */
+        transform: translateY(20px);
+    }
+
+    /* 结束关键帧，动画结束状态，即100% */
+    to {
+        opacity: 1;
+        /* 将元素在垂直方向上移回原始位置 */
+        transform: translateY(0);
+    }
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .login-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .register-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .register-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .forgot-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .forgot-header h1 {
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,700 @@
+/* Projects部分start */
+
+/* 顶部 */
+main .projects .projects-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 搜索栏start */
+main .projects .search {
+    display: flex;
+    margin: 2vh 2vw;
+}
+
+main .projects .search input {
+    width: 16rem;
+    height: 2rem;
+    padding: 0.5rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px 0 0 8px;
+}
+
+main .projects .search .search-button {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    background-color: #fff;
+    border: 2px solid var(--primary-blue);
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    line-height: 1.6rem;
+    text-align: center;
+}
+
+/* 搜索栏end */
+
+/* 新建项目 */
+main .projects .newitem {
+    height: 3rem;
+    width: 9rem;
+    margin: 1vh 3vw;
+    border: 0;
+    border-radius: 15px;
+    background-color: var(--accent-blue);
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    transition: all 0.5s;
+}
+
+/* 项目列表start */
+main .projects .projects-list {
+    margin: 2vw;
+    margin-top: 1vh;
+}
+
+main .projects .projects-list ul,
+main .tasks .task-list ul,
+main .messages .message-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    align-items: flex-start;
+    width: 100%;
+}
+
+main .projects .projects-list ul li,
+main .tasks .task-list ul li,
+main .messages .message-list ul li {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 8px -1px rgb(186, 194, 202);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+
+main .projects .projects-list ul li {
+    position: relative;
+    width: max(48%, 300px);
+}
+
+main .projects .projects-list ul li:hover {
+    transform: translateY(-5px);
+}
+
+/* 项目中角色 */
+main .projects .projects-list ul li .role {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    height: 1.8rem;
+    width: 5rem;
+    line-height: 1.8rem;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+}
+
+main .projects .projects-list ul li .role-leader {
+    background-color: #FEEBC8;
+    color: #C05621;
+}
+
+main .projects .projects-list ul li .role-admin {
+    background-color: #E9D8FD;
+    color: #6B46C1;
+}
+
+main .projects .projects-list ul li .role-member {
+    background-color: #EDF2F7;
+    color: #4A5568;
+}
+
+/* 项目名称 */
+main .projects .projects-list ul li h5,
+main .tasks .task-list ul li .task-name {
+    font-size: 1.2rem;
+}
+
+/* 项目状态 */
+main .projects .projects-list ul li .status,
+main .tasks .task-list ul li .task-status {
+    height: 1.5rem;
+    width: 4rem;
+    margin: 0.5rem 0;
+    background-color: #2C3E50;
+    border-radius: 0.6rem;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1rem;
+}
+
+main .projects .projects-list ul li .being,
+main .tasks .task-list ul li .being {
+    background-color: var(--being-yellow);
+    color: var(--beingtext-yellow);
+}
+
+main .projects .projects-list ul li .finished,
+main .tasks .task-list ul li .finished {
+    background-color: var(--finished-green);
+    color: var(--finishedtext-green);
+}
+
+main .projects .projects-list ul li .default,
+main .tasks .task-list ul li .default {
+    background-color: var(--default-gray);
+    color: var(--defaulttext-gray);
+}
+
+/* 进度条 */
+main .projects .projects-list ul li .progress {
+    height: 0.5rem;
+    width: 100%;
+    margin: 0.8rem 0;
+    background-color: var(--accent-blue);
+    border-radius: 0.5rem;
+}
+
+/* 项目信息 */
+main .projects .projects-list ul li p {
+    margin: 0.4rem 0;
+}
+
+/* 项目列表end */
+
+/* 详情页弹窗 */
+main .projects .project-detail .project-detail-card {
+    padding: 1rem;
+    overflow-y: auto;
+    /* 改为自动滚动条 */
+    max-height: 90%;
+    /* 动态高度计算 */
+    display: flex;
+    flex-direction: column;
+    /* 弹性布局保持结构 */
+}
+
+/* 顶部 */
+main .projects .project-detail .project-detail-card .detail-card-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .projects .project-detail .project-detail-card .detail-card-head button:first-child {
+    padding: 0.5rem;
+    background-color: #CBD5E0;
+    border: 0;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+main .projects .project-detail .project-detail-card .detail-card-head button:first-child:hover {
+    background-color: rgb(141, 190, 222);
+    transform: translateY(-3px);
+}
+
+main .projects .project-detail .project-detail-card .detail-card-head .close-btn {
+    margin-right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    transition: all 0.3s;
+}
+
+main .projects .project-detail .project-detail-card .detail-card-head .close-btn:hover {
+    transform: scale(1.2);
+    color: var(--error-red);
+}
+
+/* 导航栏 */
+main .projects .project-detail .project-detail-card .detail-card-nav ul {
+    display: flex;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+main .projects .project-detail .project-detail-card .detail-card-nav ul li {
+    height: 3rem;
+    width: fit-content;
+    flex: 1;
+    /* 防止导航栏被压缩 */
+    flex-shrink: 0;
+    padding: 0.2rem;
+    border-left: 2px dashed rgb(141, 190, 222);
+    line-height: 3rem;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+main .projects .project-detail .project-detail-card .detail-card-nav ul li:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+main .projects .project-detail .project-detail-card .detail-card-nav ul .active {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left: 2px solid var(--accent-blue);
+}
+
+/* 详细描述部分 */
+.detail-content {
+    flex: 1;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    margin-top: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* 各内容区块 */
+.detail-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 1rem;
+}
+
+/* 负责人样式 */
+.leader-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.leader-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 成员管理 */
+.role-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.member-list,
+.admin-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.member-list li,
+.admin-list li {
+    padding: 0.5rem 1rem;
+    background: var(--default-gray);
+    border-radius: 20px;
+}
+
+/* 文档列表 */
+.document-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.doc-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--default-gray);
+    transition: all 0.3s;
+}
+
+.doc-item:hover {
+    transform: translateX(5px);
+    background: var(--accent-blue);
+    color: white;
+}
+
+.file-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* 任务看板 */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.task-card {
+    padding: 1.5rem;
+    border-left: 4px solid;
+    border-radius: 8px;
+    background: white;
+}
+
+.task-card.being {
+    border-color: var(--beingtext-yellow);
+}
+
+.task-card.finished {
+    border-color: var(--finishedtext-green);
+}
+
+.task-card.default {
+    border-color: var(--defaulttext-gray);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.task-status {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+}
+
+/* 时间信息 */
+.time-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--accent-blue);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.time-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    main .projects .project-detail .project-detail-card {
+        height: calc(100vh - 120px);
+        padding: 0.5rem;
+    }
+
+    .detail-content {
+        padding: 1rem;
+    }
+}
+
+/* 添加新项目卡片 */
+main .projects .project-add .project-add-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90%;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+main .projects .project-add .project-add-card .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+main .projects .project-add .project-add-card .project-header h1 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+main .projects .project-add .project-add-card .project-header .project-meta {
+    color: var(--defaulttext-gray);
+    font-size: 0.9rem;
+}
+
+main .projects .project-add .project-add-card .form-section,
+main .projects .project-add .project-add-card .input-group {
+    margin-bottom: 2rem;
+}
+
+main .projects .project-add .project-add-card label,
+main .projects .project-add .project-add-card .section-title {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+main .projects .project-add .project-add-card input,
+main .projects .project-add .project-add-card textarea,
+main .projects .project-add .project-add-card select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--default-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+main .projects .project-add .project-add-card .member {
+    display: flex;
+    gap: 2rem;
+}
+
+main .projects .project-add .project-add-card .member .input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+main .projects .project-add .project-add-card .member .input-group button,
+main .projects .project-add .project-add-card .add-task-head button {
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--accent-blue);
+    font-size: 1.5rem;
+    color: var(--light-gray);
+    transition: all 0.3s;
+}
+
+main .projects .project-add .project-add-card .member .input-group button:hover,
+main .projects .project-add .project-add-card .add-task-head button:hover {
+    transform: translateY(-3px);
+}
+
+main .projects .project-add .project-add-card .member .form-section {
+    flex: 1;
+}
+
+main .projects .project-add .project-add-card .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+main .projects .project-add .project-add-card .button-group .action-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+main .projects .project-add .project-add-card .button-group .cancel-btn {
+    background: var(--default-gray);
+    color: var(--text-dark);
+}
+
+main .projects .project-add .project-add-card .button-group .create-btn {
+    background: var(--accent-blue);
+    color: white;
+}
+
+main .projects .project-add .project-add-card .button-group .create-btn:hover {
+    background: #2980b9;
+}
+
+/* 任务项样式 */
+main .projects .project-add .project-add-card .add-task-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .projects .project-add .project-add-card .task-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+main .projects .project-add .project-add-card .task-item:last-child {
+    margin-bottom: 0;
+}
+
+main .projects .project-add .project-add-card .task-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+main .projects .project-add .project-add-card .remove-task {
+    background: var(--error-red);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 文件上传样式 */
+main .projects .project-add .project-add-card .upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border: 2px dashed var(--accent-blue);
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+main .projects .project-add .project-add-card .upload-area:hover {
+    background: var(--light-gray);
+    border-style: solid;
+}
+
+main .projects .project-add .project-add-card .file-list {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+main .projects .project-add .project-add-card .file-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+main .projects .project-add .project-add-card .file-item:last-child {
+    margin-bottom: 0;
+}
+
+main .projects .project-add .project-add-card .file-name {
+    margin-left: 1rem;
+    flex: 1;
+}
+
+main .projects .project-add .project-add-card .file-remove {
+    background: var(--error-red);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main .projects .project-add .project-add-card .file-preview {
+    display: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: var(--default-gray);
+    margin-left: auto;
+}
+
+main .projects .project-add .project-add-card .file-preview.image-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+main .projects .project-add .project-add-card .preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+main .projects .project-add .project-add-card .file-preview:hover .preview-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* 删除按钮样式 */
+main .projects .project-add .project-add-card .remove-btn {
+    background: var(--error-red);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-left: 1rem;
+}
+
+main .projects .project-add .project-add-card .remove-btn:hover {
+    transform: scale(1.2);
+    background: #942a2a;
+}
+
+main .projects .project-add .project-add-card .member-item {
+    transition: all 0.3s;
+}
+
+main .projects .project-add .project-add-card .member-item.deleted {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+/* 优化列表项样式 */
+main .projects .project-add .project-add-card .member-item,
+main .projects .project-add .project-add-card .admin-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--default-gray);
+}
+
+main .projects .project-add .project-add-card .member-item:last-child,
+main .projects .project-add .project-add-card .admin-item:last-child {
+    border-bottom: none;
+}
+
+main .projects .project-add .project-add-card .deadline-group {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+main .projects .project-add .project-add-card .deadline-group label {
+    width: 6rem;
+    line-height: 3rem;
+}
+
+@media (max-width: 768px) {
+    .container-right {
+        padding: 1rem;
+    }
+
+    .project-add-card {
+        padding: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QG项目跟踪系统 - 主页</title>
+    <link rel="icon" href="static/ico/favicon.ico">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="static/font/font_321tnz8sq9x/iconfont.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/index-projects.css">
+    <link rel="stylesheet" href="CSS/index-tasks.css">
+    <link rel="stylesheet" href="CSS/index-messages.css">
+    <script src="JS/api.js"></script>
+    <script src="JS/index.js"></script>
+</head>
+
+<body>
+    <div class="container-left">
+        <nav>
+            <div class="logo">
+                <a href="index.html">QG Tracker</a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="iconfont icon-xiangmu project-nav active"> Projects
+                        <em>1</em>
+                    </li>
+                    <li class="iconfont icon-renwu task-nav"> Tasks
+                        <em>1</em>
+                    </li>
+                    <li class="iconfont icon-xiaoxi message-nav"> Messages
+                        <em>12</em>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container-right">
+        <header>
+            <div class="personal-info">
+                <span class="avatar">用户</span>
+                <span class="name">用户名</span>
+                <button id="logoutBtn">退出登录</button>
+            </div>
+            <div class="theme-color">
+                <i>🔆🌙</i>
+            </div>
+        </header>
+        <main>
+            <div class="projects">
+                <div class="projects-top">
+                    <div class="search">
+                        <input type="text" placeholder="输入项目信息或负责人姓名搜索项目..."><span class="search-button">🔍</span>
+                    </div>
+                    <button class="newitem">+ 新建项目</button>
+                </div>
+                <div class="projects-list">
+                    <ul>
+                        <li>
+                            <span class="role role-leader">负责人</span>
+                            <h5>项目名称</h5>
+                            <p class="status being">进行中</p>
+                            <div class="progress"></div>
+                            <p class="responsible-person">👤 负责人：<span>张三</span></p>
+                            <p class="start-time">📅 开始：<span>2024-12-31</span></p>
+                            <p class="end-time">📅 预计结束：<span>2024-12-31</span></p>
+                        </li>
+                        <li>
+                            <span class="role role-admin">管理员</span>
+                            <h5>项目名称</h5>
+                            <p class="status finished">已完成</p>
+                            <div class="progress"></div>
+                            <p class="responsible-person">👤 负责人：<span>张三</span></p>
+                            <p class="start-time">📅 开始：</span><span>2024-12-31</span></p>
+                            <p class="end-time">📅 预计结束：<span>2024-12-31</span></p>
+                        </li>
+                        <li>
+                            <span class="role role-member">普通成员</span>
+                            <h5>项目名称</h5>
+                            <p class="status default">未开始</p>
+                            <div class="progress"></div>
+                            <p class="responsible-person">👤 负责人：<span>张三</span></p>
+                            <p class="start-time">📅 开始：<span>2024-12-31</span></p>
+                            <p class="end-time">📅 预计结束：<span>2024-12-31</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="project-add hide">
+                    <div class="project-add-card">
+                        <div class="project-header">
+                            <h1>新建项目</h1>
+                            <div class="project-meta">
+                                <span>负责人：</span><em></em>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <div class="input-group">
+                                <label for="projectName">项目名称</label>
+                                <input type="text" id="projectName" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="projectDesc">项目描述</label>
+                                <textarea id="projectDesc" rows="4" name="description" required></textarea>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <div class="form-section">
+                                <div class="section-title">项目成员</div>
+                                <div class="input-group member-group">
+                                    <select id="memberSelect">
+                                        <option value="">选择成员</option>
+                                    </select>
+                                    <button class="add-member-btn">+</button>
+                                </div>
+                                <ul id="memberList" class="file-list"></ul>
+                            </div>
+                            <div class="form-section">
+                                <div class="section-title">管理员</div>
+                                <div class="input-group admin-group">
+                                    <select id="adminSelect">
+                                        <option value="">选择管理员</option>
+                                    </select>
+                                    <button class="add-member-btn">+</button>
+                                </div>
+                                <ul id="adminList" class="file-list"></ul>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <div class="section-title">项目文档</div>
+                            <div class="upload-area" id="uploadArea">
+                                <input type="file" id="memberSelect" multiple
+                                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.txt" name="documents"
+                                    style="display: none;">
+                                <div class="upload-icon">📁</div>
+                                <p>点击选择文件或拖放至此</p>
+                                <p class="hint">支持PDF、图片、文档（最大50MB）</p>
+                            </div>
+                            <div id="fileList" class="file-list"></div>
+                        </div>
+                        <div class="form-section">
+                            <div class="add-task-head">
+                                <div class="section-title">任务分配</div>
+                                <button class="add-task-btn">+</button>
+                            </div>
+                            <div id="taskList">
+                                <!-- 动态生成任务项 -->
+                            </div>
+                        </div>
+                        <div class="input-group datetime-group">
+                            <label for="startDate">项目开始时间：</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="input-group datetime-group">
+                            <label for="endDate">预计结束时间：</label>
+                            <input type="date" id="endDate" name="endDate" required>
+                        </div>
+                        <div class="button-group">
+                            <button class="action-btn cancel-btn">取消</button>
+                            <button class="action-btn create-btn">创建项目</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-detail hide">
+                    <div class="project-detail-card">
+                        <div class="detail-card-head">
+                            <h3>项目名称</h3>
+                            <div>
+                                <button>申请成为项目管理员</button>
+                                <button class="close-btn">×</button>
+                            </div>
+                        </div>
+                        <div class="detail-card-nav">
+                            <ul>
+                                <li class="active">详细描述 </li>
+                                <li>进度可视化图 </li>
+                                <li>数据统计</li>
+                                <li>历史状态 </li>
+                            </ul>
+                        </div>
+                        <div class="detail-content">
+                            <!-- 负责人部分 -->
+                            <div class="detail-section">
+                                <h4 class="section-title">👤 负责人</h4>
+                                <div class="leader-info">
+                                    <span class="leader-avatar">${project.leader_name.slice(0,2)}</span>
+                                    <span class="leader-name">${project.leader_name}</span>
+                                </div>
+                            </div>
+
+                            <!-- 项目描述 -->
+                            <div class="detail-section">
+                                <h4 class="section-title">📝 项目描述</h4>
+                                <p class="project-description">${project.description}</p>
+                            </div>
+
+                            <!-- 成员管理 -->
+                            <div class="member-section">
+                                <div class="role-group detail-section">
+                                    <div class="role-card">
+                                        <h4 class="section-title">👥 项目成员 <div class="memberCount"></div>
+                                        </h4>
+                                        <ul class="member-list">
+                                            ${members.map(m => `<li>${m.username}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    <div class="role-card">
+                                        <h4 class="section-title">🛡️ 管理员 <div class="adminCount"></div>
+                                        </h4>
+                                        <ul class="admin-list">
+                                            ${admins.map(a => `<li>${a.username}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 项目文档 -->
+                            <div class="detail-section">
+                                <h4 class="section-title">📁 项目文档 <div class="docCount"></div>
+                                </h4>
+                                <div class="document-list">
+                                    ${documents.map(d => `
+                                    <a href="${d.url}" class="doc-item">
+                                        <span class="file-icon">${getFileIcon(d.type)}</span>
+                                        <div>
+                                            <p class="doc-name">${d.name}</p>
+                                            <p class="doc-meta">${formatSize(d.size)} • ${d.uploader}</p>
+                                        </div>
+                                    </a>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <!-- 任务分配 -->
+                            <div class="detail-section">
+                                <h4 class="section-title">📋 任务分配 <div class="taskCount"></div>
+                                </h4>
+                                <div class="task-grid">
+                                    ${tasks.map(t => `
+                                    <div class="task-card ${t.status}">
+                                        <div class="task-header">
+                                            <h5>${t.title}</h5>
+                                            <span class="task-status">${t.status}</span>
+                                        </div>
+                                        <p class="task-desc">${t.description}</p>
+                                        <div class="task-meta">
+                                            <span>负责人：${t.assignee}</span>
+                                            <span>截止：${formatDate(t.deadline)}</span>
+                                        </div>
+                                    </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <!-- 时间信息 -->
+                            <div class="time-info">
+                                <div class="time-item">
+                                    <span class="time-label">⏳ 开始时间：</span>
+                                    <span class="start-date">${formatDate(project.start_date)}</span>
+                                </div>
+                                <div class="time-item">
+                                    <span class="time-label">⌛️ 预计结束：</span>
+                                    <span class="end-date">${formatDate(project.end_date)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tasks hide">
+                <div class="task-list">
+                    <ul>
+                        <li>
+                            <p class="task-item">所属项目</p>
+                            <h5 class="task-name">任务名称</h5>
+                            <p class="task-description">
+                                任务描述
+                            </p>
+                            <div class="status-box">
+                                <div class="task-status default">未开始</div>
+                                <button>更新任务状态</button>
+                            </div>
+                            <p class="task-endtime">📅 截止时间：<span>2024-12-31</span></p>
+                            <div class="comment hide">
+                                <div class="comment-head">
+                                    <p>Comments:</p>
+                                    <span>👍负责人</span>
+                                </div>
+                                <ul>
+                                    <li>负责人:hihi</li>
+                                    <li>你:hihi</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="task-item">所属项目</p>
+                            <h5 class="task-name">任务名称</h5>
+                            <p class="task-description">任务描述</p>
+                            <div class="status-box">
+                                <div class="task-status being">进行中</div>
+                                <button>更新任务状态</button>
+                            </div>
+                            <p class="task-endtime">📅 截止时间：<span>2024-12-31</span></p>
+                        </li>
+                        <li>
+                            <p class="task-item">所属项目</p>
+                            <h5 class="task-name">任务名称</h5>
+                            <p class="task-description">任务描述</p>
+                            <div class="status-box">
+                                <div class="task-status finished">已完成</div>
+                                <button>更新任务状态</button>
+                            </div>
+                            <p class="task-endtime">📅 截止时间：<span>2024-12-31</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="update-status hide">
+                    <div class="update-card">
+                        <h4></h4>
+                        <form id="updateTaskForm">
+                            <div class="status-chose">
+                                <label>新状态：</label>
+                                <select id="newStatus" required>
+                                    <option value="">请选择状态</option>
+                                    <option value="being">进行中</option>
+                                    <option value="finished">已完成</option>
+                                </select>
+                            </div>
+                            <div class="status-description">
+                                <label>备注：</label>
+                                <textarea id="updateNote"></textarea>
+                            </div>
+                            <div class="upload-section">
+                                <label>附件：</label>
+                                <input type="file" id="updateFiles" multiple>
+                            </div>
+                            <div class="update-btn">
+                                <button type="button" class="cancel-update">取消</button>
+                                <button type="submit">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="messages hide">
+                <div class="message-list">
+                    <ul>
+                    </ul>
+                </div>
+                <div id="globalModal" class="modal-container hide">
+                    <div class="modal-backdrop"></div>
+                    <div class="modal-card">
+                        <div class="modal-header">
+                            <h4 class="modal-title"></h4>
+                            <button class="modal-close">&times;</button>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

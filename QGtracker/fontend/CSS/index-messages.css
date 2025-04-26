@@ -1,0 +1,26 @@
+main .messages .message-list ul li {
+    width: max(23%, 200px);
+}
+
+main .messages .message-list ul li p {
+    margin: 0.5rem 0;
+}
+
+/* 任务附件样式 */
+.task-attachments {
+    margin-top: 10px;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.task-attachments a {
+    display: block;
+    color: #2c7be5;
+    text-decoration: none;
+    margin: 4px 0;
+}
+
+.task-attachments a:hover {
+    text-decoration: underline;
+}

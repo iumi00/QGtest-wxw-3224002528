@@ -1,0 +1,173 @@
+:root {
+    /* 底色主蓝色 */
+    --primary-blue: #2C3E50;
+    /* 强调蓝色 */
+    --accent-blue: #3498DB;
+    /* 浅色文本色 */
+    --light-gray: #F5F6FA;
+    /* 深色文本色 */
+    --text-dark: #2C3E50;
+    /* 警告红色 */
+    --error-red: #e74c3c;
+    /* 未开始灰色 */
+    --default-gray: #EDF2F7;
+    /* 未开始灰色文字 */
+    --defaulttext-gray: #718096;
+    /* 进行中黄色 */
+    --being-yellow: #FEFCBF;
+    /* 进行中黄色文字 */
+    --beingtext-yellow: #B7791F;
+    /* 已完成绿色 */
+    --finished-green: #C6F6D5;
+    /* 已完成绿色文字 */
+    --finishedtext-green: #2F855A;
+}
+
+body {
+    display: flex;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+}
+
+/* 左侧导航栏start */
+.container-left nav {
+    height: 100vh;
+    width: 16vw;
+    min-width: 180px;
+}
+
+/* 大logo部分 */
+.container-left nav .logo {
+    width: 100%;
+    text-align: center;
+    padding: 4vh 0;
+}
+
+.container-left nav .logo a {
+    color: #74b3de;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* 导航栏列表部分 */
+.container-left nav .nav-list {
+    padding: 0 1vw;
+}
+
+.container-left nav .nav-list li {
+    position: relative;
+    display: block;
+    height: 4.5rem;
+    width: 100%;
+    margin: 2vh 0;
+    padding-left: 2vw;
+    border-radius: 8px;
+    color: var(--light-gray);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+    white-space: nowrap;
+    cursor: default;
+    transition: all 1s ease;
+}
+
+.container-left nav .nav-list li:first-child {
+    margin-top: 0;
+}
+
+.container-left nav .nav-list li:hover {
+    background-color: var(--accent-blue);
+}
+
+.container-left nav .nav-list .active {
+    background-color: var(--accent-blue);
+}
+
+.container-left nav .nav-list li em {
+    position: absolute;
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    left: 5px;
+    top: 5px;
+    font-size: 0.8rem;
+    border-radius: 0.6rem;
+    background-color: var(--error-red);
+    color: var(--light-gray);
+    text-align: center;
+    line-height: 1rem;
+}
+
+/* 左侧导航栏end */
+
+/* 右侧部分 */
+.container-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* 右侧头部start */
+.container-right header {
+    position: relative;
+    height: max(8vh, 60px);
+    line-height: max(8vh, 60px);
+}
+
+/* 用户头像名字 */
+.container-right header .personal-info {
+    position: absolute;
+    display: flex;
+    right: max(8vw, 50px);
+    height: 100%;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.container-right header .personal-info .avatar {
+    /* 自定义储存高度值 */
+    --box-height: max(5.5vh, 45px);
+    height: var(--box-height);
+    /* 宽高比 */
+    aspect-ratio: 1;
+    border-radius: calc(var(--box-height)/2);
+    background-color: #74b3de;
+    color: var(--text-dark);
+    line-height: var(--box-height);
+    text-align: center;
+}
+
+.container-right header .personal-info .name {
+    margin: 0 8px;
+    color: var(--light-gray);
+}
+
+.container-right header .personal-info #logoutBtn {
+    padding: 8px;
+    margin-left: 1rem;
+    background-color: var(--accent-blue);
+    border: 0;
+    border-radius: 8px;
+    color: var(--light-gray);
+    transition: all 0.8s;
+}
+
+.container-right header .personal-info #logoutBtn:hover {
+    background-color: var(--primary-blue);
+}
+
+/* 夜间模式切换 */
+.container-right header .theme-color {
+    position: absolute;
+    right: 1vw;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* 右侧头部end */
+
+/* 右侧主体部分start */
+.container-right main {
+    flex: 1;
+    background-color: #f0f4f8;
+    border-radius: 8px 0 0 0;
+}
